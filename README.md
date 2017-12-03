@@ -1,13 +1,19 @@
 
-# cookie cutter bash shell script
-# Ruoqi Xu, 2017-11-17
-# Reference:https://github.com/chendaniely/computational-project-cookie-cutter/blob/master/setup_project_dir.sh
-# This script can generates a project file and directory structure template.
-#
-# Arguement: The argument passed into the script should be the dir
-# where you want the project folder structure setup.
-# Output: create the following folder structure
-# Path_Provided
+# Milestone V1.0
+### Ruoqi Xu, 2017-12-13
+
+## Data
+[Titanic data](https://github.ubc.ca/ubc-mds-2017/datasets/blob/master/data/titanic.csv)
+
+##Question
+If there are linear relationship between survive rate, gender, age, and fare.
+
+##Hypotheses
+- Old man had lower survive rate than child, because the old man's physical fitness is not as good as young man. 
+- People who pay high fare has higher survive rate than others.
+
+##Project structure
+
     |- CITATION.md
     |
     |- README.md
