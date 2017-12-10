@@ -120,13 +120,23 @@ str(titanic_clean)
 
 ```r
 test1=read.csv("../results/test1.csv", header=TRUE)
+```
+
+```
+## Warning in file(file, "rt"): 无法打开文件'../results/test1.csv': No such
+## file or directory
+```
+
+```
+## Error in file(file, "rt"): 无法打开链结
+```
+
+```r
 test1
 ```
 
 ```
-##   X        term     estimate   std.error statistic      p.value
-## 1 1 (Intercept)  0.463666418 0.035017539 13.240977 4.181024e-37
-## 2 2         age -0.001844241 0.001056788 -1.745138 8.125528e-02
+## Error in eval(expr, envir, enclos): 找不到对象'test1'
 ```
 
 ##plot
@@ -139,13 +149,23 @@ We can see as above, the two groups age are no significant different and the p-v
 
 ```r
 test2=read.csv("../results/test2.csv", header=TRUE)
+```
+
+```
+## Warning in file(file, "rt"): 无法打开文件'../results/test2.csv': No such
+## file or directory
+```
+
+```
+## Error in file(file, "rt"): 无法打开链结
+```
+
+```r
 test2
 ```
 
 ```
-##   X        term    estimate    std.error statistic      p.value
-## 1 1 (Intercept) 0.327948954 0.0176507399 18.579898 8.671617e-67
-## 2 2        fare 0.002198749 0.0002646252  8.308919 2.978490e-16
+## Error in eval(expr, envir, enclos): 找不到对象'test2'
 ```
 
 ##plot
