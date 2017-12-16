@@ -25,13 +25,13 @@ main <- function(){
   
   #take results to a table
   test1 <- broom::tidy(summary(lm1))
-  write.csv(test1,file="/Users/apple/Documents/777/UBC/block3/DSCI_522/DSCI_522_milestone/results/age_survived.csv")
+  write.csv(test1,file="./results/age_survived.csv")
   
   #draw a boxplot and save it to plot1.png
   plot1 <- ggplot(data1, aes(factor(survived),age))+
     geom_boxplot(aes(group=survived))+
     labs(x="survived", y="age",title="Boxplot for survived and age")
-  ggsave("/Users/apple/Documents/777/UBC/block3/DSCI_522/DSCI_522_milestone/results/age_survived.svg",plot1,scale=0.8)
+  ggsave("./results/age_survived.svg",plot1,scale=0.8)
   
   # fit linear model between fare and survived rate.
   lm2 <- lm(data = data1, survived~fare)
@@ -39,14 +39,14 @@ main <- function(){
   
   #take results to a table
   test2 <- broom::tidy(summary(lm2))
-  write.csv(test2,file="/Users/apple/Documents/777/UBC/block3/DSCI_522/DSCI_522_milestone/results/fare_survived.csv")
+  write.csv(test2,file="./results/fare_survived.csv")
   
   
   # draw a boxplot and save it to plot2.png
   plot2 <- ggplot(data1, aes(factor(survived),fare))+
     geom_boxplot(aes(group=survived))+
     labs(x="survived", y="fare",title="Boxplot for survived and fare")
-  ggsave("/Users/apple/Documents/777/UBC/block3/DSCI_522/DSCI_522_milestone/results/fare_survived.svg",plot2,scale=0.8)
+  ggsave("./results/fare_survived.svg",plot2,scale=0.8)
   
  }
 

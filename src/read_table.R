@@ -16,5 +16,5 @@ head(titanic)
 str(titanic)
 
 #write csv file to data folder
-write.csv(titanic,file="/Users/apple/Documents/777/UBC/block3/DSCI_522/DSCI_522_milestone/data/titanic.csv")
+write.csv(titanic,file="./data/titanic.csv")
 

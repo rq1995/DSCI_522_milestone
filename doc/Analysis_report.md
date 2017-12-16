@@ -64,25 +64,25 @@ str(titanic)
 ##Clean data
 
 ```r
-titanic_clean=read.csv("../data/titanic_clean.csv", header=TRUE)
+titanic_clean=read.csv("results/clean_titanic.csv", header=TRUE)
 head(titanic_clean)
 ```
 
 ```
-##   X.1 X pclass survived                                            name
-## 1   1 1      1        1                   Allen, Miss. Elisabeth Walton
-## 2   2 2      1        1                  Allison, Master. Hudson Trevor
-## 3   3 3      1        0                    Allison, Miss. Helen Loraine
-## 4   4 4      1        0            Allison, Mr. Hudson Joshua Creighton
-## 5   5 5      1        0 Allison, Mrs. Hudson J C (Bessie Waldo Daniels)
-## 6   6 6      1        1                             Anderson, Mr. Harry
-##      sex     age sibsp parch ticket     fare   cabin embarked boat body
-## 1 female 29.0000     0     0  24160 211.3375      B5        S    2   NA
-## 2   male  0.9167     1     2 113781 151.5500 C22 C26        S   11   NA
-## 3 female  2.0000     1     2 113781 151.5500 C22 C26        S        NA
-## 4   male 30.0000     1     2 113781 151.5500 C22 C26        S       135
-## 5 female 25.0000     1     2 113781 151.5500 C22 C26        S        NA
-## 6   male 48.0000     0     0  19952  26.5500     E12        S    3   NA
+##   X pclass survived                                            name    sex
+## 1 1      1        1                   Allen, Miss. Elisabeth Walton female
+## 2 2      1        1                  Allison, Master. Hudson Trevor   male
+## 3 3      1        0                    Allison, Miss. Helen Loraine female
+## 4 4      1        0            Allison, Mr. Hudson Joshua Creighton   male
+## 5 5      1        0 Allison, Mrs. Hudson J C (Bessie Waldo Daniels) female
+## 6 6      1        1                             Anderson, Mr. Harry   male
+##       age sibsp parch ticket     fare   cabin embarked boat body
+## 1 29.0000     0     0  24160 211.3375      B5        S    2   NA
+## 2  0.9167     1     2 113781 151.5500 C22 C26        S   11   NA
+## 3  2.0000     1     2 113781 151.5500 C22 C26        S        NA
+## 4 30.0000     1     2 113781 151.5500 C22 C26        S       135
+## 5 25.0000     1     2 113781 151.5500 C22 C26        S        NA
+## 6 48.0000     0     0  19952  26.5500     E12        S    3   NA
 ##                         home.dest
 ## 1                    St Louis, MO
 ## 2 Montreal, PQ / Chesterville, ON
@@ -97,8 +97,7 @@ str(titanic_clean)
 ```
 
 ```
-## 'data.frame':	1045 obs. of  16 variables:
-##  $ X.1      : int  1 2 3 4 5 6 7 8 9 10 ...
+## 'data.frame':	1045 obs. of  15 variables:
 ##  $ X        : int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ pclass   : int  1 1 1 1 1 1 1 1 1 1 ...
 ##  $ survived : int  1 1 0 0 0 1 1 0 1 0 ...
@@ -119,28 +118,18 @@ str(titanic_clean)
 ##Linear model between age and survived
 
 ```r
-test1=read.csv("../results/test1.csv", header=TRUE)
-```
-
-```
-## Warning in file(file, "rt"): 无法打开文件'../results/test1.csv': No such
-## file or directory
-```
-
-```
-## Error in file(file, "rt"): 无法打开链结
-```
-
-```r
+test1=read.csv("results/age_survived.csv", header=TRUE)
 test1
 ```
 
 ```
-## Error in eval(expr, envir, enclos): 找不到对象'test1'
+##   X        term     estimate   std.error statistic      p.value
+## 1 1 (Intercept)  0.463666418 0.035017539 13.240977 4.181024e-37
+## 2 2         age -0.001844241 0.001056788 -1.745138 8.125528e-02
 ```
 
 ##plot
-![](../results/plot1.svg)
+![](../results/age_survived.svg)
 
 >My first hypotheses is that old man had lower survive rate than child, because the old man's physical fitness is not as good as young man. 
 We can see as above, the two groups age are no significant different and the p-value is more than 0.1. So there are no significant linear relation between age and survived.
@@ -148,28 +137,18 @@ We can see as above, the two groups age are no significant different and the p-v
 ##Linear model between fare and survived
 
 ```r
-test2=read.csv("../results/test2.csv", header=TRUE)
-```
-
-```
-## Warning in file(file, "rt"): 无法打开文件'../results/test2.csv': No such
-## file or directory
-```
-
-```
-## Error in file(file, "rt"): 无法打开链结
-```
-
-```r
+test2=read.csv("results/fare_survived.csv", header=TRUE)
 test2
 ```
 
 ```
-## Error in eval(expr, envir, enclos): 找不到对象'test2'
+##   X        term    estimate    std.error statistic      p.value
+## 1 1 (Intercept) 0.327948954 0.0176507399 18.579898 8.671617e-67
+## 2 2        fare 0.002198749 0.0002646252  8.308919 2.978490e-16
 ```
 
 ##plot
-![](../results/plot2.svg)
+![](../results/fare_survived.svg)
 
 >My second hypotheses is that people who pay high fare has higher survive rate than others.
 We can see as above, the two groups fare are significant different and the p-value is less than 0.01. So there are significant linear relation between age and survived. My second hypotheses is right.

@@ -10,10 +10,8 @@
 
 # read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
-input_file <- args[1]
-variable_1 <- args[2]
-variable_2 <- args[3]
-variable_3 <- args[3]
+input_file <- args[1]  # path for the original data
+cleaned_data <- args[2]  # path for the cleaned data
 library(tidyverse)
 
 # define main function
@@ -24,10 +22,10 @@ main <- function(){
   
   # clean data
   data1 <- data%>%
-    filter(is.na(variable_1)==FALSE,is.na(variable_2)==FALSE,is.na(variable_3)==FALSE)
+    filter(is.na(survived)==FALSE,is.na(age)==FALSE,is.na(fare)==FALSE)
   
   # write clean data to new csv file
-  write.csv(data1,file="/Users/apple/Documents/777/UBC/block3/DSCI_522/DSCI_522_milestone/data/titanic_clean.csv")
+  write.csv(data1,cleaned_data,row.names = FALSE)
 }
 
 
