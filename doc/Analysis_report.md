@@ -129,7 +129,7 @@ test1
 ```
 
 ##plot
-![](../results/age_survived.svg)
+![](../results/figure/age_survived.svg)
 
 >My first hypotheses is that old man had lower survive rate than child, because the old man's physical fitness is not as good as young man. 
 We can see as above, the two groups age are no significant different and the p-value is more than 0.1. So there are no significant linear relation between age and survived.
@@ -148,7 +148,7 @@ test2
 ```
 
 ##plot
-![](../results/fare_survived.svg)
+![](../results/figure/fare_survived.svg)
 
 >My second hypotheses is that people who pay high fare has higher survive rate than others.
 We can see as above, the two groups fare are significant different and the p-value is less than 0.01. So there are significant linear relation between age and survived. My second hypotheses is right.

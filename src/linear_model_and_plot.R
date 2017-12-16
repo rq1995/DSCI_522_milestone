@@ -31,7 +31,7 @@ main <- function(){
   plot1 <- ggplot(data1, aes(factor(survived),age))+
     geom_boxplot(aes(group=survived))+
     labs(x="survived", y="age",title="Boxplot for survived and age")
-  ggsave("./results/age_survived.svg",plot1,scale=0.8)
+  ggsave("./results/figure/age_survived.svg",plot1,scale=0.8)
   
   # fit linear model between fare and survived rate.
   lm2 <- lm(data = data1, survived~fare)
@@ -46,7 +46,7 @@ main <- function(){
   plot2 <- ggplot(data1, aes(factor(survived),fare))+
     geom_boxplot(aes(group=survived))+
     labs(x="survived", y="fare",title="Boxplot for survived and fare")
-  ggsave("./results/fare_survived.svg",plot2,scale=0.8)
+  ggsave("./results/figure/fare_survived.svg",plot2,scale=0.8)
   
  }
 
