@@ -1,0 +1,31 @@
+digraph G {
+n2[label="all", color="red"];
+n7[label="data/titanic.csv", color="green"];
+n3[label="doc/report.md", color="red"];
+n5[label="results/age_survived.csv", color="green"];
+n6[label="results/clean_titanic.csv", color="green"];
+n12[label="results/fare_survived.csv", color="green"];
+n11[label="results/figure/age_survived.svg", color="green"];
+n13[label="results/figure/fare_survived.svg", color="green"];
+n4[label="src/Analysis_report.Rmd", color="green"];
+n9[label="src/clean_data.R", color="green"];
+n10[label="src/linear_model_and_plot.R", color="green"];
+n8[label="src/read_table.R", color="green"];
+n3 -> n2 ; 
+n8 -> n7 ; 
+n5 -> n3 ; 
+n12 -> n3 ; 
+n11 -> n3 ; 
+n13 -> n3 ; 
+n4 -> n3 ; 
+n6 -> n5 ; 
+n10 -> n5 ; 
+n7 -> n6 ; 
+n9 -> n6 ; 
+n6 -> n12 ; 
+n10 -> n12 ; 
+n6 -> n11 ; 
+n10 -> n11 ; 
+n6 -> n13 ; 
+n10 -> n13 ; 
+}
