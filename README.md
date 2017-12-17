@@ -6,11 +6,12 @@
 [Titanic data](https://github.ubc.ca/ubc-mds-2017/datasets/blob/master/data/titanic.csv)
 
 ## Question
-If there are linear relationship between survive rate, gender, age, and fare.
+If there are linear relationship between survive rate, age, and fare.
 
 ## Hypotheses
-- Old man had lower survive rate than child, because the old man's physical fitness is not as good as young man. 
-- People who pay high fare has higher survive rate than others.
+- The old man had lower survival rate than the child because the old man's physical fitness is not as good as the young man. 
+
+- People who pay high fare has higher survival rate than others.
 
 ## Project structure
 
@@ -31,20 +32,27 @@ If there are linear relationship between survive rate, gender, age, and fare.
     |- results/       # output for tracking computational experiments performed on data
 
 
-## Usage
-
-```
-Rscript src/read_table.R
-Rscript src/clean_data.R data/titanic.csv survived age fare
-Rscript src/linear_model_and_plot.R data/titanic_clean.csv
-Rscript -e 'ezknitr::ezknit("src/Analysis_report.Rmd", out_dir = "/doc")'
-```
 
 ## Analysis  
 
 * Analysis of the data to respond to the specifically requested results (2 hypotheses above) is completed in the ./doc folder.
+* For the first hypotheses, based on our results, the age of two groups(survived or not) are no significant different. There are no significant linear relation between age and survived.
+* For the second hypotheses, based on our results, the fare of two groups(survived or not)is significant different. People who pay high fare has higher survive rate than others.
 
-   
+## Plan of Action
+- Download and clean the data.
+- Fit the linear model for each hypotheses
+- Plot the response and explanatory variable for each hypotheses
+- Report the linear model results and p-value to see if the null hypothesis should be rejected or not
+
+## Usage
+
+
+## Dependency Diagram
+
+A dependency diagram of the Makefile using [`makefile2graph`](https://github.com/lindenb/makefile2graph) is shown below.
+
+![](Makefile.png) 
    
 
 ## Dependencies:
