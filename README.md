@@ -1,6 +1,6 @@
 
-# Milestone V1.0
-### Ruoqi Xu, 2017-12-13
+# Milestone 
+### Ruoqi Xu, 2017-12
 
 ## Data
 [Titanic data](https://github.ubc.ca/ubc-mds-2017/datasets/blob/master/data/titanic.csv)
