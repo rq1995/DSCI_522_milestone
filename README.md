@@ -45,7 +45,49 @@ If there are linear relationship between survive rate, age, and fare.
 - Plot the response and explanatory variable for each hypotheses
 - Report the linear model results and p-value to see if the null hypothesis should be rejected or not
 
-## Usage
+## Usage(using Docker)
+
+1. Use command line clone the project repository to the path in your computer
+
+```
+git clone https://github.com/rq1995/DSCI_522_milestone.git
+```
+
+2. We need Docker to access the project envirnment. So install the docker follow the instruction [here](https://docs.docker.com/engine/installation/).
+
+3. Pull the Docker image for DSCI_522_milestone
+
+```
+docker pull ruoqixu/dsci_522_milestone
+```
+
+4. Run below code to get the analysis 
+
+```
+docker run --rm -v <local-path-to-project-repo>:/home/dsci_522_milestone make -C '/home/dsci_522_milestone'
+```
+
+5. Also can use the docker image to remove the results with the following command 
+
+```
+docker run --rm -v <local-path-to-project-repo>/BC-motor-vehicle-incidents:/home/dsci_522_milestone make -C '/home/dsci_522_milestone' clean
+```
+
+## Usage(using make)
+
+If you want to use Make in command line. You should  use `cd` to go to root first. And then type below code in terminal. 
+
+1. Run below code to get the full analysis 
+
+```
+make all
+```
+
+2. Remove the results to clean up
+
+```
+make clean
+```
 
 
 ## Dependency Diagram
