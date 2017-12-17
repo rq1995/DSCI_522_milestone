@@ -64,7 +64,7 @@ docker pull ruoqixu/dsci_522_milestone
 4. Run below code to get the analysis 
 
 ```
-docker run --rm -v <local-path-to-project-repo>:/home/dsci_522_milestone make -C '/home/dsci_522_milestone'
+docker run --rm -v <local-path-to-project-repo>:/home/dsci_522_milestone make -C '/home/dsci_522_milestone' all
 ```
 
 5. Also can use the docker image to remove the results with the following command 
