@@ -27,6 +27,7 @@ doc/report.md: src/Analysis_report.Rmd results/age_survived.csv results/figure/a
 
 # delete intermediate files
 clean:
+	rm -f data/titanic.csv
 	rm -f results/age_survived.csv
 	rm -f results/figure/age_survived.svg
 	rm -f results/fare_survived.csv
